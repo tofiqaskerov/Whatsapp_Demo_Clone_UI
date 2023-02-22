@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/main.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Network Status</h1>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="message__body">
+
+        </div>
+        <div class="chat__side">
+            <div class="my-container">
+                <div class="icon__side">
+
+                    <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet"
+                        class="ekdr8vow dhq51u3o" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24"
+                        xml:space="preserve">
+                        <path fill="currentColor"
+                            d="M9.153,11.603c0.795,0,1.439-0.879,1.439-1.962S9.948,7.679,9.153,7.679 S7.714,8.558,7.714,9.641S8.358,11.603,9.153,11.603z M5.949,12.965c-0.026-0.307-0.131,5.218,6.063,5.551 c6.066-0.25,6.066-5.551,6.066-5.551C12,14.381,5.949,12.965,5.949,12.965z M17.312,14.073c0,0-0.669,1.959-5.051,1.959 c-3.505,0-5.388-1.164-5.607-1.959C6.654,14.073,12.566,15.128,17.312,14.073z M11.804,1.011c-6.195,0-10.826,5.022-10.826,11.217 s4.826,10.761,11.021,10.761S23.02,18.423,23.02,12.228C23.021,6.033,17.999,1.011,11.804,1.011z M12,21.354 c-5.273,0-9.381-3.886-9.381-9.159s3.942-9.548,9.215-9.548s9.548,4.275,9.548,9.548C21.381,17.467,17.273,21.354,12,21.354z  M15.108,11.603c0.795,0,1.439-0.879,1.439-1.962s-0.644-1.962-1.439-1.962s-1.439,0.879-1.439,1.962S14.313,11.603,15.108,11.603z">
+                        </path>
+                    </svg>
+                    <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class=""
+                        version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve">
+                        <path fill="currentColor"
+                            d="M1.816,15.556v0.002c0,1.502,0.584,2.912,1.646,3.972s2.472,1.647,3.974,1.647 c1.501,0,2.91-0.584,3.972-1.645l9.547-9.548c0.769-0.768,1.147-1.767,1.058-2.817c-0.079-0.968-0.548-1.927-1.319-2.698 c-1.594-1.592-4.068-1.711-5.517-0.262l-7.916,7.915c-0.881,0.881-0.792,2.25,0.214,3.261c0.959,0.958,2.423,1.053,3.263,0.215 c0,0,3.817-3.818,5.511-5.512c0.28-0.28,0.267-0.722,0.053-0.936c-0.08-0.08-0.164-0.164-0.244-0.244 c-0.191-0.191-0.567-0.349-0.957,0.04c-1.699,1.699-5.506,5.506-5.506,5.506c-0.18,0.18-0.635,0.127-0.976-0.214 c-0.098-0.097-0.576-0.613-0.213-0.973l7.915-7.917c0.818-0.817,2.267-0.699,3.23,0.262c0.5,0.501,0.802,1.1,0.849,1.685 c0.051,0.573-0.156,1.111-0.589,1.543l-9.547,9.549c-0.756,0.757-1.761,1.171-2.829,1.171c-1.07,0-2.074-0.417-2.83-1.173 c-0.755-0.755-1.172-1.759-1.172-2.828l0,0c0-1.071,0.415-2.076,1.172-2.83c0,0,5.322-5.324,7.209-7.211 c0.157-0.157,0.264-0.579,0.028-0.814c-0.137-0.137-0.21-0.21-0.342-0.342c-0.2-0.2-0.553-0.263-0.834,0.018 c-1.895,1.895-7.205,7.207-7.205,7.207C2.4,12.645,1.816,14.056,1.816,15.556z">
+                        </path>
+                    </svg>
+
+                </div>
+                <input type="text" id="message" placeholder="Type a message">
+                <div class="voice__txt__send">
+                    <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet"
+                        class="voice__send" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24"
+                        xml:space="preserve">
+                        <path fill="currentColor"
+                            d="M11.999,14.942c2.001,0,3.531-1.53,3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531 S8.469,2.35,8.469,4.35v7.061C8.469,13.412,9.999,14.942,11.999,14.942z M18.237,11.412c0,3.531-2.942,6.002-6.237,6.002 s-6.237-2.471-6.237-6.002H3.761c0,4.001,3.178,7.297,7.061,7.885v3.884h2.354v-3.884c3.884-0.588,7.061-3.884,7.061-7.885 L18.237,11.412z">
+                        </path>
+                    </svg>
+                    <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet"
+                        class="txt__send" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24"
+                        xml:space="preserve">
+                        <path fill="currentColor"
+                            d="M1.101,21.757L23.8,12.028L1.101,2.3l0.011,7.912l13.623,1.816L1.112,13.845 L1.101,21.757z">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="signalr.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <script>
+
+        $(document).ready(() => {
+            const connection = new signalR.HubConnectionBuilder()  // bu function ile hub-a baglaniriq
+                .withUrl("https://localhost:7150/testhub")   // bu function ile bu client - in hansi hub-a websocket protokulu uzerinden baglanacagini bildiririk.
+                .withAutomaticReconnect([1000, 1000, 2000, 10000, 20000]) // bu functionun ozelliyi odurki eger baglanti qurularsa daha sonra baglanti kesilerse mueyyen  perioadlarda tekrardan baglanma isteyinde olur. default olaraq 0-2-10-30 cu saniyeler araliginda reconnect isteyinde olur.  array icerisinde manual olaraq periodlar elave ede bilerik.
+                .build()
+
+
+            async function startConnect() {
+                try {
+                    await connection.start()
+                } catch (error) {
+                    setTimeout(() => startConnect(), 2000)
+                }
+            }
+            startConnect()
+            // connection.start()  start function  ile connection-u basladiriq.  connection.start() ile baslatsa idik layihe acilan zaman servere baglana bilmeyecekdi. gerek sehifeni refreshleyesen. Bunun qarsisini almaq ucun startConnect adinda bir async function yaratdim. Ve her layihe start edilende birbasa serverle elaqe qurmaga calisir. 
+
+            connection.onreconnecting(error => {    // onreconnecting functionu yeniden baglanma zamani istifadeci terefine bir mesaj gondermek ve yaxudda diger seyler ucun istifade olunur.
+                $(".modal").addClass("show")
+                $(".modal").css("display", "block")
+                $(".modal-body").html(
+                    `<div class="alert alert-warning" role="alert">
+                          Connecting...
+                      </div>`
+                )
+            })
+            connection.onreconnected(id => {    // onreconnected  functionu yeniden baglanma ugurlu olarsa o zaman istifadeci terefine bir mesaj gonderir ve ya diger seyler ucun istifade olunur.
+                $(".modal").addClass("show")
+                $(".modal").css("display", "block")
+                $(".modal-body").html(
+                    `<div class="alert alert-success" role="alert">
+                        Contact established
+                      </div>`
+                )
+                $(".modal").fadeIn(3000, () => {
+                    setTimeout(() => {
+                        $(".modal").fadeOut(3000);
+                    }, 2000)
+                })
+            })
+            connection.onclose(id => {   // onclose functionu yeniden baglanma ugursuz olarsa istifadeci terefine bir mesaj gonderir ve ya diger seyler ucun istfade olunur.
+                $(".modal").addClass("show")
+                $(".modal").css("display", "block")
+                $(".modal-body").html(
+                    `<div class="alert alert-danger" role="alert">
+                        Contact established
+                      </div>`
+                )
+                $(".modal").fadeIn(3000, () => {
+                    setTimeout(() => {
+                        $(".modal").fadeOut(3000);
+                    }, 2000)
+                })
+            })
+
+
+
+            $('#message').on('keyup', (e) => {
+                if (e.key === 'Enter' || e.keyCode === 13) {
+                    submitMessage();
+                }
+            });
+            $('.txt__send').on('click', () => {
+                submitMessage();
+            });
+            function submitMessage() {
+                var message = $('#message').val();
+                if (message.trim().length == 0) {
+                    return;
+                }
+                connection.invoke("SendMessageAsync", message)
+                $('#message').val('');
+                $(".voice__send").css("display", "block")
+                $(".txt__send").css("display", "none")
+
+            }
+
+            connection.on("Message", message => {
+                $(".message__body").append(`
+                <div id="result">
+                <div class="message__line">
+                    <span class="shape">
+                        <svg viewBox="0 0 8 13" height="13" width="8" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 8 13" xml:space="preserve"><path opacity="0.13" d="M5.188,1H0v11.193l6.467-8.625 C7.526,2.156,6.958,1,5.188,1z"></path><path fill="currentColor" d="M5.188,0H0v11.193l6.467-8.625C7.526,1.156,6.958,0,5.188,0z"></path></svg>
+                    </span>
+                    <div class="message">
+                        <div class="txt">
+                            ${message}
+                        </div>
+                    </div>
+                </div>
+            </div>`);
+            });
+
+            $('#message').on('input', function () {
+                var value = $(this).val();
+                if (value.length > 0) {
+                    $(".voice__send").css("display", "none")
+                    $(".txt__send").css("display", "block")
+                } else {
+                    $(".voice__send").css("display", "block")
+                    $(".txt__send").css("display", "none")
+                }
+
+            });
+
+
+
+        })
+    </script>
+</body>
+
+</html>
