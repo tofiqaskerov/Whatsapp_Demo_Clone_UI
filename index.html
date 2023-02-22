@@ -34,6 +34,13 @@
                 </div>
             </div>
         </div>
+        <div class="toast__side"></div>
+        <div class="clients__side">
+            <h5 style="color: #ffff">Online:</h5>
+            <ul id="clients">
+                
+            </ul>
+        </div>
         <div class="message__body">
 
         </div>
@@ -104,7 +111,14 @@
             }
             startConnect()
             // connection.start()  start function  ile connection-u basladiriq.  connection.start() ile baslatsa idik layihe acilan zaman servere baglana bilmeyecekdi. gerek sehifeni refreshleyesen. Bunun qarsisini almaq ucun startConnect adinda bir async function yaratdim. Ve her layihe start edilende birbasa serverle elaqe qurmaga calisir. 
-
+            function animation(animateEvent){
+                
+                $(animateEvent).fadeIn(3000, () => {
+                    setTimeout(() => {
+                        $(animateEvent).fadeOut(3000);
+                    }, 2000)
+                })
+            }
             connection.onreconnecting(error => {    // onreconnecting functionu yeniden baglanma zamani istifadeci terefine bir mesaj gondermek ve yaxudda diger seyler ucun istifade olunur.
                 $(".modal").addClass("show")
                 $(".modal").css("display", "block")
@@ -113,6 +127,7 @@
                           Connecting...
                       </div>`
                 )
+               
             })
             connection.onreconnected(id => {    // onreconnected  functionu yeniden baglanma ugurlu olarsa o zaman istifadeci terefine bir mesaj gonderir ve ya diger seyler ucun istifade olunur.
                 $(".modal").addClass("show")
@@ -122,11 +137,8 @@
                         Contact established
                       </div>`
                 )
-                $(".modal").fadeIn(3000, () => {
-                    setTimeout(() => {
-                        $(".modal").fadeOut(3000);
-                    }, 2000)
-                })
+                animation(".modal");
+              
             })
             connection.onclose(id => {   // onclose functionu yeniden baglanma ugursuz olarsa istifadeci terefine bir mesaj gonderir ve ya diger seyler ucun istfade olunur.
                 $(".modal").addClass("show")
@@ -136,11 +148,8 @@
                         Contact established
                       </div>`
                 )
-                $(".modal").fadeIn(3000, () => {
-                    setTimeout(() => {
-                        $(".modal").fadeOut(3000);
-                    }, 2000)
-                })
+                animation(".modal");
+                
             })
 
 
@@ -161,10 +170,43 @@
                 connection.invoke("SendMessageAsync", message)
                 $('#message').val('');
                 $(".voice__send").css("display", "block")
-                $(".txt__send").css("display", "none")
+                $(".txt__send").css("display", "none")      
 
             }
 
+            connection.on("userJoin", connectionId => {
+                 let txt = "";
+                txt +=
+                    `<div class="toast align-items-center show" style="background-color: #0C4128;"  role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+              <div class="toast-body"  >
+                
+                <span style="color: #fff;">${connectionId} joined</span> 
+             </div>
+              <button type="button" style="color: "#fff";" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+          </div>`
+                 $(".message__body").html(txt)
+                 animation(".toast");
+              
+            })
+
+            connection.on("userLeft", connectionId => {
+                let txt = "";
+                txt +=
+                    `<div class="toast align-items-center show" style="background-color: red;"  role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+              <div class="toast-body"  >
+                
+                <span style="color: #fff;">${connectionId} disconnect</span> 
+             </div>
+              <button type="button" style="color: "#fff";" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+          </div>`
+                 $(".message__body").html(txt)
+                 animation(".toast");
+              
+            })
             connection.on("Message", message => {
                 $(".message__body").append(`
                 <div id="result">
@@ -180,7 +222,15 @@
                 </div>
             </div>`);
             });
-
+            connection.on("allClients", clients =>{
+                let txt = "";
+                $.each(clients, (index, item) =>{
+                    txt += `<li>${item}</li>`;
+                })
+                $("#clients").html(txt)
+                $(".clients__side").css("display", "block")
+            console.log(clients)
+            } )
             $('#message').on('input', function () {
                 var value = $(this).val();
                 if (value.length > 0) {

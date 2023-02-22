@@ -121,3 +121,18 @@ svg:not(.shape svg){
     box-sizing: border-box;
 }
 
+.toast{
+    position: fixed;
+    
+}
+.clients__side{
+    position: absolute;
+    left: 2%;
+    top: 20%;
+    z-index: 50;
+    display: none;
+}
+
+.clients__side li{
+    color: #fff;
+}
